@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:green_future/theme/theme.dart';
 
 class Pallet extends StatelessWidget {
@@ -38,8 +39,8 @@ class Pallet extends StatelessWidget {
           children: [
             Opacity(
               opacity: 0.5,
-              child: Image.network(
-                pallet_url,
+              child: CachedNetworkImage(
+                imageUrl: pallet_url,
                 fit: BoxFit.cover,
                 width: MediaQuery.of(context).size.width * width,
                 height: MediaQuery.of(context).size.height * height,
@@ -97,8 +98,9 @@ class CustomContainer extends StatelessWidget {
       child: Stack(
         alignment: Alignment.center,
         children: [
-          Image.network(
-            'https://www.dropbox.com/scl/fi/3vcjneu88woax5s2h7w61/green-pallate.jpg?rlkey=wjhdteazh0gwrvrikn85jg270&dl=1',
+          CachedNetworkImage(
+            imageUrl:
+                'https://www.dropbox.com/scl/fi/3vcjneu88woax5s2h7w61/green-pallate.jpg?rlkey=wjhdteazh0gwrvrikn85jg270&dl=1',
             width: width,
             height: height,
             fit: BoxFit.fill,
